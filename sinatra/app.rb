@@ -9,7 +9,5 @@ get '/secret' do
 end
 
 get '/dog' do
-  "<div>
-  <img src='https://i.ytimg.com/vi/opKg3fyqWt4/hqdefault.jpg'>
-  </div>"
+  erb(:index)
 end
