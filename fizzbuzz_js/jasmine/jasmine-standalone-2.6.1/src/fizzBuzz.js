@@ -1,8 +1,15 @@
-function Fizz() {
-  Fizz.prototype.num = function(number) {
-    return number;
-  }
+var Fizz = function() {};
+// ClassName.prototype.methodName = function () {
+Fizz.prototype._isDivisibleBy = function(number, divisor) {
+  return (number % divisor === 0);
 };
 
-var fizz = new Fizz();
-fizz.num(30)
+Fizz.prototype.isDivisibleByFifteen = function(number) {
+  return this._isDivisibleBy(number, 15);
+};
+
+Fizz.prototype.says = function(number) {
+  if (this.isDivisibleByThree(number)) {
+    return "Java";
+  }
+};
