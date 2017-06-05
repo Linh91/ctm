@@ -1,13 +1,10 @@
 describe('Airport', function() {
   var airport;
-  var fakeWeather = new Weather()
-    isStormy: function() {
-      return false;
-    };
-  };
+  var badWeather = true;
+  var goodWeather = false;
 
   beforeEach(function() {
-    airport = new Airport(fakeWeather);
+    airport = new Airport(goodWeather);
   });
 
   describe('Airport has empty array', function() {
@@ -32,8 +29,9 @@ describe('Airport', function() {
   });
 
   describe('Prevent take off when story', function() {
-    it('Raises error when story', function() {
-      expect(airport.takeOff('plane')).toThrow('Plane can not take off!');
+    it('Raises error when stormy', function() {
+      var luton = new Airport(badWeather);
+      expect(function() {luton.takeOff('plane', badWeather)}).toThrow('Plane can not take off!');
     });
   });
 });
