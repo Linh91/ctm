@@ -1,50 +1,59 @@
-'use strict';
+/*requiring node modules starts */
 
-const express = require("express");
-const http = require('http');
-const socketio = require('socket.io');
-const bodyParser = require('body-parser');
-
-
-const routes = require('./utils/routes');
-const config = require('./utils/config');
+var app = require("express")();
+var http = require('http').Server(app);
+var io = require("socket.io")(http);
+var Session = require('express-session');
+var cookieParser = require('cookie-parser');
+/*requiring node modules ends */
 
 
-class Server{
+// the session is stored in a cookie, so we use this to parse it
+app.use(cookieParser());
 
-    constructor(){
-        this.port =  process.env.PORT || 81;
-        this.host = `localhost`;
+var Session= Session({
+	secret:'secrettokenhere',
+	saveUninitialized: true,
+	resave: true
+});
 
-        this.app = express();
-        this.http = http.Server(this.app);
-        this.socket = socketio(this.http);
-    }
 
-    appConfig(){
-        this.app.use(
-            bodyParser.json()
-        );
-        new config(this.app);
-    }
+io.use(function(socket, next) {
+	    Session(socket.request, socket.request.res, next);
+});
 
-    /* Including app Routes starts*/
-    includeRoutes(){
-        new routes(this.app,this.socket).routesConfig();
-    }
-    /* Including app Routes ends*/
 
-    appExecute(){
+app.use(Session);
 
-        this.appConfig();
-        this.includeRoutes();
+var sessionInfo;
 
-        this.http.listen(this.port, this.host, () => {
-            console.log(`Listening on http://${this.host}:${this.port}`);
-        });
-    }
+/* requiring config file starts*/
+var config =require('./middleware/config.js')(app);
+/* requiring config file ends*/
 
-}
+/* requiring config db.js file starts*/
+var db = require("./middleware/db.js");
+var connection_object= new db();
+var connection=connection_object.connection; // getting conncetion object here
+/* requiring config db.js file ends*/
 
-const app = new Server();
-app.appExecute();
+
+/*
+	1. Requiring auth-routes.js file, which takes care of all Login & Registration page operation.
+	2. Passing object of express, Database connection, expressSession and cookieParser.
+	3. auth-routes.js contains the methods and routes for Login and registration page.
+*/
+require('./middleware/auth-routes.js')(app,connection,Session,cookieParser,sessionInfo);
+/*
+	1. Requiring routes.js file, which takes handles the Home page operation.
+	2. Passing object of express, Database connection and object of socket.io as 'io'.
+	3. routes.js contains the methods and routes for Home page
+*/
+require('./middleware/routes.js')(app,connection,io,Session,cookieParser,sessionInfo);
+
+/*
+	Running our application
+*/
+http.listen(81,function(){
+    console.log("Listening on http://127.0.0.1:81");
+});
