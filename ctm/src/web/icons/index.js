@@ -1,0 +1,9 @@
+export { MoreIcon } from './more';
+export { VehiclesIcon } from './vehicles';
+export { TravelIcon } from './travel';
+export { RightArrowButton } from './rightArrow';
+export { LifeIcon } from './life';
+export { HouseIcon } from './house';
+export { HomePetIcon } from './home';
+export { FinancesIcon } from './finance';
+export { BusinessIcon } from './business';

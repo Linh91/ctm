@@ -1,0 +1,83 @@
+.App {
+  background-color: #1E488C;
+  height: 100vh;
+  display: grid;
+  padding-bottom: 100rem;
+}
+
+@media (min-width: 45em) {
+  .App {
+    padding: 0 20px 100rem;
+  }
+}
+
+@media (min-width: 1020px) {
+  .App {
+    padding: 0 71px 100rem;
+  }
+}
+
+.border {
+  border: 1px solid black;
+  width: 100%;
+}
+
+@media (max-width: 30em) {
+  .border {
+    border: 1px solid red;
+  }
+}
+
+.ProductDropdownBoxContainer {
+  padding: 0;
+}
+
+@media (max-width: 44.99rem) {
+  .ProductDropdownBoxContainer {
+    padding: 0 5px;
+  }
+}
+
+.ProductsSection {
+  padding-bottom: 300px;
+  background-color: #1E488C;
+  width: 100%;
+}
+
+@media (min-width: 45em) {
+  .ProductsSection {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1020px) {
+  .ProductsSection {
+    margin: auto;
+    width: 905px;
+  }
+}
+
+.LogoContainer {
+  padding: 20px 0 10px 5px;
+}
+
+@media (min-width: 45em) {
+  .LogoContainer {
+    width: 100%;
+    padding: 20px 0 0;
+  }
+}
+
+@media (min-width: 1020px) {
+  .LogoContainer {
+    margin: auto;
+    width: 905px;
+  }
+}
+
+.Logo {
+  position: relative;
+  float: left;
+  width: 300px;
+}

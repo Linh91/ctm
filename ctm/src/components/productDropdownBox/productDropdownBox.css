@@ -1,0 +1,94 @@
+@import '../../web/styles/sizing.css';
+
+.BoxContainer {
+  background-color: #012366;
+  border: none;
+  color: white;
+  padding: 0 20px;
+  margin: 10px 0 0;
+  cursor: pointer;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 44.99em) {
+  .BoxContainer {
+    padding: 0;
+  }
+}
+
+.Icon {
+  display: inline;
+  vertical-align: middle;
+}
+
+.ProductName {
+  display: inline;
+  vertical-align: middle;
+}
+
+@media (max-width: 44.99em) {
+  .ProductName {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 44.99em) {
+  .RightText {
+    font-size: 12px;
+  }
+}
+
+.ProuctImage {
+  display: inline;
+}
+
+@media (min-width: 45rem) {
+  .ProductDescription {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+.CashbackValue {
+  display: inline;
+}
+
+@media (max-width: 44.99rem) {
+  .CashbackValue {
+    margin: 40px 40px 20px;
+  }
+}
+
+.BoxContainerOpen {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.ButtonContainer {
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+@media (max-width: 44.99em) {
+  .ButtonContainer {
+    padding: 0 0 0 2px;
+  }
+}
+
+.ListContainer {
+  margin: auto;
+  width: 100%;
+}
+
+.RightTextContainer {
+  margin-left: auto;
+}
+
+@media (max-width: 44.99rem) {
+  .RightTextContainer {
+    margin-right: 10px;
+  }
+}

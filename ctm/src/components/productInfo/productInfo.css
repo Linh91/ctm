@@ -1,0 +1,71 @@
+:root {
+  --default-margin: 40px 40px;
+}
+
+.ProductInformationContainer {
+  display: inline-flex;
+  width: 100%;
+  background-color: white;
+}
+
+@media (max-width: 44.99em) {
+  .ProductInformationContainer {
+    display: inline-block;
+  }
+}
+
+.ImageContainer {
+  margin-top: 20px;
+}
+
+@media (max-width: 44.99rem) {
+  .ImageContainer {
+    text-align: center;
+  }
+}
+
+@media (min-width: 45em) {
+  .ImageContainer {
+    margin: 40px 0 40px 80px;
+  }
+}
+
+.ProductDescription {
+  margin: var(--default-margin);
+  width: 350px;
+  text-align: center;
+}
+
+@media (max-width: 44.99rem) {
+  .ProductDescription {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.CashbackContainer {
+  margin: var(--default-margin);
+  text-align: center;
+}
+
+.CashbackHeader {
+  margin: 0;
+}
+
+.VerticalBorder {
+  border-left: 1px solid grey;
+  height: 75px;
+  margin-top: 40px;
+}
+
+@media (max-width: 44.99rem) {
+  .VerticalBorder {
+    border-left: none;
+    height: 0;
+    margin-top: 40px;
+  }
+}
+
+.ProductDescriptionContainer {
+  padding: 0 10px;
+}
