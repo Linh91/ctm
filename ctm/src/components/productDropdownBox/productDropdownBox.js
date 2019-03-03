@@ -6,7 +6,7 @@ import './productDropdownBox.css';
 
 class ProductDropdownBox extends Component {
   render() {
-    const toggleProductInformationSection = (
+    const moreProductInformationComponent = (
         <ProductInfo
           productDescription={this.props.productDescription}
           productCashbackValue={this.props.productCashbackValue}
@@ -27,7 +27,7 @@ class ProductDropdownBox extends Component {
             <h3 className="RightDivText">{this.props.productApr}% APR</h3>
           </div>
         </div>
-        {this.props.showMoreInfo ? toggleProductInformationSection : null}
+        {this.props.showMoreInfo ? moreProductInformationComponent : null}
       </div>
     )
   }

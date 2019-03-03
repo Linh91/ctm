@@ -1,6 +1,7 @@
 :root {
   --default-margin: 40px 40px;
   --product-desc-mob-width: 350px;
+  --border-height: 75px;
 }
 
 .ProductInformationContainer {
@@ -71,7 +72,7 @@
 
 .VerticalBorder {
   border-left: 1px solid grey;
-  height: 75px;
+  height: var(--border-height);
   margin-top: 40px;
 }
 

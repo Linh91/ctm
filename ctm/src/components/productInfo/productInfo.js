@@ -12,19 +12,19 @@ export const ProductInfo = ({
   productCode
 }) => {
 
-  const sortImageByProduct = (productCode) => {
+  const imageByProductType = (productCode) => {
     if (productCode === 'CARD_274') {
-      return <img src={card_274} alt={productCode}/>
+      return <img src={(productCode)} alt={productCode}/>
     } else if (productCode === 'CARD_822') {
-      return <img src={card_822} alt={productCode}/>
+        return <img src={card_822} alt={productCode}/>
     } else if (productCode === 'CARD_315') {
-      return <img src={card_315} alt={productCode}/>
+        return <img src={card_315} alt={productCode}/>
     } else if (productCode === 'CARD_539') {
-      return <img src={card_539} alt={productCode}/>
+        return <img src={card_539} alt={productCode}/>
     }
   }
 
-  const imageForProduct = sortImageByProduct(productCode)
+  const imageForProduct = imageByProductType(productCode)
 
   return (
     <div className="ProductInformationContainer">
@@ -39,7 +39,6 @@ export const ProductInfo = ({
         <h3 className="CashbackHeader">Carshback</h3>
         <h1 className="CashbackValue">£{productCashbackValue.toFixed(2)}</h1>
       </div>
-
     </div>
   )
 }

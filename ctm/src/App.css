@@ -2,10 +2,11 @@
   --large-bottom-padding: 1000px;
   --container-width: 905px;
   --logo-width: 300px;
+  --default-background-color: #1E488C;
 }
 
 .App {
-  background-color: #1E488C;
+  background-color: var(--default-background-color);
   height: 100vh;
   display: grid;
   padding-bottom: var(--large-bottom-padding);
@@ -14,17 +15,6 @@
 @media (min-width: 45em) {
   .App {
     padding: 0 20px var(--large-bottom-padding);
-  }
-}
-
-.border {
-  border: 1px solid black;
-  width: 100%;
-}
-
-@media (max-width: 30em) {
-  .border {
-    border: 1px solid red;
   }
 }
 
@@ -40,7 +30,7 @@
 
 .ProductsSection {
   padding-bottom: var(--large-bottom-padding);
-  background-color: #1E488C;
+  background-color: var(--default-background-color);
   width: 100%;
 }
 

@@ -48,54 +48,27 @@ class App extends Component {
     let cards = require('./cards.json')
     const cardsSortedByApr = cards.sort((a, b) => a.apr - b.apr)
 
-    const productItem1 = (
-      <ProductDropdownBox
-        productName={cardsSortedByApr[0].name}
-        productApr={cardsSortedByApr[0].apr}
-        productDescription={cardsSortedByApr[0].information}
-        productCashbackValue={cardsSortedByApr[0].cashback}
-        imageSrc={cardsSortedByApr[0].code}
-        buttonAction={this.openProductOneInfo}
-        showMoreInfo={isProductOneShowing} />
-    )
+    const generateProductComponent = (card, buttonAction, showMoreInfo) => {
+      return (
+        <ProductDropdownBox
+          productName={card.name}
+          productApr={card.apr}
+          productDescription={card.information}
+          productCashbackValue={card.cashback}
+          imageSrc={card.code}
+          buttonAction={buttonAction}
+          showMoreInfo={showMoreInfo} />)
+}
 
-    const productItem2 = (
-      <ProductDropdownBox
-        productName={cardsSortedByApr[1].name}
-        productApr={cardsSortedByApr[1].apr}
-        productDescription={cardsSortedByApr[1].information}
-        productCashbackValue={cardsSortedByApr[1].cashback}
-        imageSrc={cardsSortedByApr[1].code}
-        buttonAction={this.openProductTwoInfo}
-        showMoreInfo={isProductTwoShowing} />
-    )
-
-    const productItem3 = (
-      <ProductDropdownBox
-        productName={cardsSortedByApr[2].name}
-        productApr={cardsSortedByApr[2].apr}
-        productDescription={cardsSortedByApr[2].information}
-        productCashbackValue={cardsSortedByApr[2].cashback}
-        imageSrc={cardsSortedByApr[2].code}
-        buttonAction={this.openProductThreeInfo}
-        showMoreInfo={isProductThreeShowing} />
-    )
-
-    const productItem4 = (
-      <ProductDropdownBox
-        productName={cardsSortedByApr[3].name}
-        productApr={cardsSortedByApr[3].apr}
-        productDescription={cardsSortedByApr[3].information}
-        productCashbackValue={cardsSortedByApr[3].cashback}
-        imageSrc={cardsSortedByApr[3].code}
-        buttonAction={this.openProductFourInfo}
-        showMoreInfo={isProductFourShowing} />
-    )
+    const productItem1 = generateProductComponent(cardsSortedByApr[0], this.openProductOneInfo, isProductOneShowing)
+    const productItem2 = generateProductComponent(cardsSortedByApr[1], this.openProductTwoInfo, isProductTwoShowing)
+    const productItem3 = generateProductComponent(cardsSortedByApr[2], this.openProductThreeInfo, isProductThreeShowing)
+    const productItem4 = generateProductComponent(cardsSortedByApr[3], this.openProductFourInfo, isProductFourShowing)
 
     return (
       <div className="App">
         <div className="LogoContainer">
-          <img src={logo} alt='compare the market logo' className="Logo"/>
+          <img src={logo} alt='Compare the market logo' className="Logo"/>
         </div>
         <HeaderMenu />
         <div className="ProductsSection">
