@@ -38,8 +38,7 @@ class HeaderMenu extends Component {
             <HeaderMenuButton
               key={categories.id}
               icon={categories.icon}
-              name={categories.name} />
-          )
+              name={categories.name} />)
         })}
       </div>
     )

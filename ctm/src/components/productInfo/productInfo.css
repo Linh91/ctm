@@ -5,13 +5,19 @@
 
 .ProductInformationContainer {
   display: inline-flex;
-  width: 100%;
+  margin: 0 5px 0;
   background-color: white;
 }
 
 @media (max-width: 44.99em) {
   .ProductInformationContainer {
     display: inline-block;
+  }
+}
+
+@media (min-width: 45em) {
+  .ProductInformationContainer {
+    margin: 0;
   }
 }
 

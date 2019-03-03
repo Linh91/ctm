@@ -8,16 +8,16 @@
   border: none;
   color: white;
   padding: 0 20px;
-  margin: 10px 0 0;
+  margin: 10px 5px 0;
   cursor: pointer;
   border-radius: var(--border-radius);
   display: flex;
   align-items: center;
 }
 
-@media (max-width: 44.99em) {
+@media (min-width: 45em) {
   .BoxContainer {
-    padding: 0;
+    margin: 10px 0 0;
   }
 }
 
@@ -67,7 +67,7 @@
 
 @media (max-width: 44.99em) {
   .ButtonContainer {
-    padding: 0 0 0 2px;
+    padding: 0 0 2px;
   }
 }
 
