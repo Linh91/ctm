@@ -1,19 +1,19 @@
+:root {
+  --large-bottom-padding: 1000px;
+  --container-width: 905px;
+  --logo-width: 300px;
+}
+
 .App {
   background-color: #1E488C;
   height: 100vh;
   display: grid;
-  padding-bottom: 100rem;
+  padding-bottom: var(--large-bottom-padding);
 }
 
 @media (min-width: 45em) {
   .App {
-    padding: 0 20px 100rem;
-  }
-}
-
-@media (min-width: 1020px) {
-  .App {
-    padding: 0 71px 100rem;
+    padding: 0 20px var(--large-bottom-padding);
   }
 }
 
@@ -39,7 +39,7 @@
 }
 
 .ProductsSection {
-  padding-bottom: 300px;
+  padding-bottom: var(--large-bottom-padding);
   background-color: #1E488C;
   width: 100%;
 }
@@ -54,7 +54,7 @@
 @media (min-width: 1020px) {
   .ProductsSection {
     margin: auto;
-    width: 905px;
+    width: var(--container-width);
   }
 }
 
@@ -72,12 +72,12 @@
 @media (min-width: 1020px) {
   .LogoContainer {
     margin: auto;
-    width: 905px;
+    width: var(--container-width);
   }
 }
 
 .Logo {
   position: relative;
   float: left;
-  width: 300px;
+  width: var(--logo-width);
 }

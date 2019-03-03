@@ -10,34 +10,32 @@ class App extends Component {
     let cards = require('./cards.json')
 
     const cardsSortedByApr = cards.sort((a, b) => a.apr - b.apr)
+
     const productItem = (
       <div className="ProductsSection">
         {cardsSortedByApr.map(eachCard => {
           return (
-            <div className="ProductDropdownBoxContainer">
+            <div 
+              key={Math.round(eachCard.apr)}
+              className="ProductDropdownBoxContainer">
               <ProductDropdownBox
-                      key={eachCard.apr}
-                      productName={eachCard.name}
-                      productApr={eachCard.apr}
-                      productDescription={eachCard.information}
-                      productCashbackValue={eachCard.cashback}
-                      imageSrc={eachCard.code} />
-
+                productName={eachCard.name}
+                productApr={eachCard.apr}
+                productDescription={eachCard.information}
+                productCashbackValue={eachCard.cashback}
+                imageSrc={eachCard.code} />
             </div>
-          )
-
-        })}
+          )})}
       </div>
     )
+
     return (
       <div className="App">
-      {/* <div> */}
         <div className="LogoContainer">
           <img src={logo} alt='compare the market logo' className="Logo"/>
         </div>
         <HeaderMenu />
         {productItem}
-      {/* </div> */}
       </div>
     );
   }

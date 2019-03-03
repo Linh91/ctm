@@ -1,5 +1,6 @@
 :root {
   --default-margin: 40px 40px;
+  --product-desc-mob-width: 350px;
 }
 
 .ProductInformationContainer {
@@ -32,7 +33,7 @@
 
 .ProductDescription {
   margin: var(--default-margin);
-  width: 350px;
+  width: var(--product-desc-mob-width);
   text-align: center;
 }
 
@@ -52,6 +53,16 @@
   margin: 0;
 }
 
+.CashbackValue {
+  display: inline;
+}
+
+@media (max-width: 44.99rem) {
+  .CashbackValue {
+    margin: 40px 40px 20px;
+  }
+}
+
 .VerticalBorder {
   border-left: 1px solid grey;
   height: 75px;
@@ -62,7 +73,6 @@
   .VerticalBorder {
     border-left: none;
     height: 0;
-    margin-top: 40px;
   }
 }
 

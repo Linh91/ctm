@@ -3,7 +3,9 @@
   vertical-align: middle;
 }
 
-.MenuIcon {
+.DefaultIconClass {
   position: relative;
   vertical-align: middle;
+  height: 24px;
+  width: 24px;;
 }

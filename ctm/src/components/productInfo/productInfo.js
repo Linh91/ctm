@@ -14,13 +14,13 @@ export const ProductInfo = ({
 
   const sortImageByProduct = (productCode) => {
     if (productCode === 'CARD_274') {
-      return <img src={card_274} />
+      return <img src={card_274} alt={productCode}/>
     } else if (productCode === 'CARD_822') {
-      return <img src={card_822} />
+      return <img src={card_822} alt={productCode}/>
     } else if (productCode === 'CARD_315') {
-      return <img src={card_315} />
+      return <img src={card_315} alt={productCode}/>
     } else if (productCode === 'CARD_539') {
-      return <img src={card_539} />
+      return <img src={card_539} alt={productCode}/>
     }
   }
 

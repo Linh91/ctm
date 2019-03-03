@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import HeaderButton from '../headerButton/headerButton';
+import HeaderMenuButton from '../headerMenuButton/headerMenuButton';
 import {
   VehiclesIcon,
   TravelIcon,
@@ -31,12 +31,11 @@ class HeaderMenu extends Component {
   }
 
   render() {
-
     const menuOptions = (
       <div className="MenuOptionsContainer">
         {this.state.menuCategory.map(categories => {
           return (
-            <HeaderButton
+            <HeaderMenuButton
               key={categories.id}
               icon={categories.icon}
               name={categories.name} />

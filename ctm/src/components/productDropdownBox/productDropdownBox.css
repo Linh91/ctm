@@ -1,4 +1,7 @@
-@import '../../web/styles/sizing.css';
+:root {
+  --mob-font-size: 12px;
+  --border-radius: 12px;
+}
 
 .BoxContainer {
   background-color: #012366;
@@ -7,7 +10,7 @@
   padding: 0 20px;
   margin: 10px 0 0;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
   display: flex;
   align-items: center;
 }
@@ -30,13 +33,13 @@
 
 @media (max-width: 44.99em) {
   .ProductName {
-    font-size: 12px;
+    font-size: var(--mob-font-size);
   }
 }
 
 @media (max-width: 44.99em) {
-  .RightText {
-    font-size: 12px;
+  .RightDivText {
+    font-size: var(--mob-font-size);
   }
 }
 
@@ -48,16 +51,6 @@
   .ProductDescription {
     display: inline-block;
     width: auto;
-  }
-}
-
-.CashbackValue {
-  display: inline;
-}
-
-@media (max-width: 44.99rem) {
-  .CashbackValue {
-    margin: 40px 40px 20px;
   }
 }
 

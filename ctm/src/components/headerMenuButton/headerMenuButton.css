@@ -1,0 +1,44 @@
+:root {
+  --deafult-border: 1px solid #1E488C;
+  --border-radius: 12px;
+}
+
+.MenuTabContainer {
+  background: transparent;
+  border: none;
+  background-color: #012366;
+  color: white;
+  cursor: pointer;
+  display: inline;
+  border-radius: 0;
+  margin: 0;
+  padding: 5px 20px;
+}
+
+@media (max-width: 44.99em) {
+  .MenuTabContainer {
+    width: 50%;
+    border: var(--deafult-border);
+  }
+}
+
+@media (min-width: 45em) {
+  .MenuTabContainer {
+    border: var(--deafult-border);
+    padding: 10px 10px;
+    margin: 4px 2px;
+    border-radius: var(--border-radius);
+  }
+}
+
+@media (min-width: 1020px) {
+  .MenuTabContainer {
+    padding: 10px 18px;
+  }
+}
+
+.MenuCategory {
+  display: inline;
+  vertical-align: middle;
+  margin-left: 8px;
+}

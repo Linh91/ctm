@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './headerButton.css';
+import './headerMenuButton.css';
 
-export const HeaderButton = ({ icon, name }) => {
+export const HeaderMenuButton = ({ icon, name }) => {
   return (
     <button className="MenuTabContainer">
       <div className="Icon">
@@ -13,4 +13,4 @@ export const HeaderButton = ({ icon, name }) => {
   )
 }
 
-export default HeaderButton;
+export default HeaderMenuButton;

@@ -44,7 +44,7 @@ class ProductDropdownBox extends Component {
           </div>
           <h3 className="ProductName">{this.props.productName}</h3>
           <div className="RightTextContainer">
-            <h3 className="RightText">{this.props.productApr}% APR</h3>
+            <h3 className="RightDivText">{this.props.productApr}% APR</h3>
           </div>
         </div>
         {toggleProductInformationSection}
